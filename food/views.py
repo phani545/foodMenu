@@ -45,8 +45,8 @@ def update_item(request,id):
 
 def delete_item(request,id):
     item = Item.objects.get(id=id)
-
-    if request.method == 'POST':
+    
+    if item:
         item.delete()
         return redirect('food:index')
     
